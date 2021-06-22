@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Uso de diccionarios</title>
+
+<script src="pub/libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="pub/libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="pub/libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="pub/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="pub/libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="pub/libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="pub/libs/navigation-1.1/tabsets.js"></script>
+<link href="pub/libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="pub/libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Uso de diccionarios</h1>
+
+</div>
+
+
+<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+<p>Como en un diccionario convencional, un diccionario en Python permite asociar elementos con algún valor. Estos elementos los identificamos por una llave, de esta manera un diccionario en python guarda pares llave, valor.</p>
+<p>Podemos definir un diccionario de la siguiente manera:</p>
+<pre class="python"><code>diccionario = {&#39;animal&#39; : &#39;perro&#39;, &#39;edad&#39; : 5, &#39;juguetes&#39;: [&#39;pelota&#39;,&#39;peluche&#39;] }</code></pre>
+<p><strong>01 - Crea un nuevo diccionario llamado persona, su nombre es juan y edad es 22</strong></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InB5dGhvbiIsInNhbXBsZSI6IiNDcmVhIGVsIGRpY2Npb25hcmlvIHkgZ3VhcmRhbG8gZW4gbGEgdmFyaWFibGUgcGVyc29uYVxuXG5cbiNJbXByaW1lIGxhIHZhcmlhYmxlIHBlcnNvbmEiLCJzb2x1dGlvbiI6IiNDcmVhIGVsIGRpY2Npb25hcmlvIHkgZ3VhcmRhbG8gZW4gbGEgdmFyaWFibGUgcGVyc29uYVxucGVyc29uYSA9IHsnbm9tYnJlJyA6ICdqdWFuJywgJ2VkYWQnIDogMjIgfVxuXG4jSW1wcmltZSBsYSB2YXJpYWJsZSBwZXJzb25hXG5wcmludChwZXJzb25hKSIsInNjdCI6InRlc3Rfb2JqZWN0KFwicGVyc29uYVwiKVxudGVzdF9vdXRwdXRfY29udGFpbnMoXCJub21icmVcIiwgbm9fb3V0cHV0X21zZyA9IFwiQXNlZ3VyYXRlIGRlIHVzYXIgcHJpbnQgcGFyYSBpbXJwaW1pciBlbCB2YWxvciBkZSBwZXJzb25hXCIpXG5zdWNjZXNzX21zZyhcIkJ1ZW4gdHJhYmFqbyFcIikiLCJoaW50IjoiVXNhIGVsIGNcdTAwZjNkaWdvIGRlc2NyaXRvIGFsIGluaWNpbyBjb21vIGJhc2UgcGFyYSBlbCBlamVyY2ljaW8uIExhcyBsbGF2ZXMgc29uIG5vbWJyZSB5IGVkYWQuIn0=
+</div>
+<hr />
+<p>Una vez definido el diccionario podemos acceder a los valores del diccionario usando la llave.</p>
+<pre class="python"><code>diccionario = {&#39;animal&#39; : &#39;perro&#39;, &#39;edad&#39; : 5, &#39;juguetes&#39;: [&#39;pelota&#39;,&#39;peluche&#39;] }
+
+val = diccionario[&#39;juguetes&#39;]
+print(val)</code></pre>
+<pre><code>## [&#39;pelota&#39;, &#39;peluche&#39;]</code></pre>
+<p><strong>02 - Guarda la edad de la persona en una variable llamada edad e imprimela en pantalla</strong></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InB5dGhvbiIsInByZV9leGVyY2lzZV9jb2RlIjoicGVyc29uYSA9IHsnbm9tYnJlJyA6ICdqdWFuJywgJ2VkYWQnIDogMjIgfSIsInNhbXBsZSI6IiNHdWFyZGEgZWwgdmFsb3IgZGUgZWRhZCBlbiBsYSB2YXJpYWJsZSBlZGFkXG5cblxuI0ltcHJpbWUgbGEgdmFyaWFibGUgZWRhZCIsInNvbHV0aW9uIjoiI0d1YXJkYSBlbCB2YWxvciBkZSBlZGFkIGVuIGxhIHZhcmlhYmxlIGVkYWRcbmVkYWQgPSBwZXJzb25hWydlZGFkJ11cblxuI0ltcHJpbWUgbGEgdmFyaWFibGUgZWRhZFxucHJpbnQoZWRhZCkiLCJzY3QiOiJ0ZXN0X29iamVjdChcImVkYWRcIilcbnRlc3Rfb3V0cHV0X2NvbnRhaW5zKFwiMjJcIiwgbm9fb3V0cHV0X21zZyA9IFwiQXNlZ3VyYXRlIGRlIHVzYXIgcHJpbnQgcGFyYSBpbXJwaW1pciBlbCB2YWxvciBkZSBlZGFkXCIpXG5zdWNjZXNzX21zZyhcIkJ1ZW4gdHJhYmFqbyFcIikiLCJoaW50IjoiVXNhIGRpY2Npb25hcmlvWyYjMzk7bGxhdmUmIzM5O10gcGFyYSBhY2NlZGVyIGFsIHZhbG9yIGFzb2NpYWRvIGEgbGEgJiMzOTtsbGF2ZSYjMzk7LiJ9
+</div>
+<hr />
+<p>Puedes añadir nuevos elementos o sobreescribir elementos existentes de la siguiente manera:</p>
+<pre class="python"><code>diccionario = {&#39;animal&#39; : &#39;perro&#39;, &#39;edad&#39; : 5, &#39;juguetes&#39;: [&#39;pelota&#39;,&#39;peluche&#39;] }
+
+diccionario[&#39;edad&#39;] = 6
+diccionario[&#39;comida&#39;]=&#39;croquetas&#39;</code></pre>
+<p><strong>03 - Cambia la edad presente en el diccionario persona a 25 y añade los pasatiempos cocinar y leer.</strong></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InB5dGhvbiIsInByZV9leGVyY2lzZV9jb2RlIjoicGVyc29uYSA9IHsnbm9tYnJlJyA6ICdqdWFuJywgJ2VkYWQnIDogMjIgfSIsInNhbXBsZSI6IiNDYW1iaWEgbGEgZWRhZCBhIDI1IHkgYVx1MDBmMWFkZSBsb3MgcGFzYXRpZW1wb3MgY29jaW5hciB5IGxlZXJcblxuXG4jSW1wcmltZSBsYSB2YXJpYWJsZSBwZXJzb25hIiwic29sdXRpb24iOiIjQ2FtYmlhIGxhIGVkYWQgYSAyNSB5IGFcdTAwZjFhZGUgbG9zIHBhc2F0aWVtcG9zIGNvY2luYXIgeSBsZWVyXG5wZXJzb25hWydlZGFkJ10gPSAyNVxucGVyc29uYVsncGFzYXRpZW1wb3MnXSA9IFsnY29jaW5hcicsJ2xlZXInXVxuXG5cbiNJbXByaW1lIGxhIHZhcmlhYmxlIHBlcnNvbmFcbnByaW50KHBlcnNvbmEpIiwic2N0IjoidGVzdF9vYmplY3QoXCJwZXJzb25hXCIpXG50ZXN0X291dHB1dF9jb250YWlucyhcInBhc2F0aWVtcG9zXCIsIG5vX291dHB1dF9tc2cgPSBcIkFzZWd1cmF0ZSBkZSB1c2FyIHByaW50IHBhcmEgaW1ycGltaXIgZWwgdmFsb3IgZGUgcGVyc29uYVwiKVxuc3VjY2Vzc19tc2coXCJCdWVuIHRyYWJham8hXCIpIiwiaGludCI6IlB1ZWRlcyB1c2FyIGRpY2Npb25hcmlvWyYjMzk7bGxhdmUmIzM5O10gPSB2YWxvciBwYXJhIHNvYnJlZXNjcmliaXIgbyBhXHUwMGYxYWRpciBudWV2b3MgZWxlbWVudG9zIGVuIHVuIGRpY2Npb25hcmlvLiAoTG9zIHBhc2F0aWVtcG9zIHNvbiB1bmEgbGlzdGEpIn0=
+</div>
+<hr />
+<p>Podemos averiguar si un diccionario contiene un elemento de la siguiente manera:</p>
+<pre class="python"><code>diccionario = {&#39;animal&#39; : &#39;perro&#39;, &#39;edad&#39; : 5, &#39;juguetes&#39;: [&#39;pelota&#39;,&#39;peluche&#39;] }
+
+&#39;animal&#39; in diccionario</code></pre>
+<pre><code>## True</code></pre>
+<p><strong>04 - Imprime en pantalla el texto ‘Contiene pasatiempos’ si el diccionario persona contiene la llave ‘pasatiempo’</strong></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InB5dGhvbiIsInByZV9leGVyY2lzZV9jb2RlIjoicGVyc29uYSA9IHsnbm9tYnJlJyA6ICdqdWFuJywgJ2VkYWQnIDogMjUsICdwYXNhdGllbXBvcyc6IFsnY29jaW5hcicsJ2xlZXInXSB9Iiwic2FtcGxlIjoiI0ltcHJpbWUgZW4gcGFudGFsbGEgZWwgdGV4dG8gJ0NvbnRpZW5lIHBhc2F0aWVtcG9zJyBzaSBlbCBkaWNjaW9uYXJpbyBwZXJzb25hIGNvbnRpZW5lIGxhIGxsYXZlICdwYXNhdGllbXBvJyIsInNvbHV0aW9uIjoiI0ltcHJpbWUgZW4gcGFudGFsbGEgZWwgdGV4dG8gJ0NvbnRpZW5lIHBhc2F0aWVtcG9zJyBzaSBlbCBkaWNjaW9uYXJpbyBwZXJzb25hIGNvbnRpZW5lIGxhIGxsYXZlICdwYXNhdGllbXBvJ1xuaWYgJ3Bhc2F0aWVtcG9zJyBpbiBwZXJzb25hOlxuICBwcmludCgnQ29udGllbmUgcGFzYXRpZW1wb3MnKSIsInNjdCI6InRlc3Rfb3V0cHV0X2NvbnRhaW5zKFwicGFzYXRpZW1wb3NcIiwgbm9fb3V0cHV0X21zZyA9IFwiVmVyaWZpY2EgcXVlIGhheWFzIGVzY3JpdG8gbGEgbGxhdmUgY29ycmVjdGFtZW50ZSwgYWwgaWd1YWwgcXVlIGVsIG1lbnNhamVcIilcbnN1Y2Nlc3NfbXNnKFwiQnVlbiB0cmFiYWpvIVwiKSIsImhpbnQiOiJSZWN1ZXJkYSB1c2FyIHVuYSBlc3RydWN0dXJhIGNvbmRpY2lvbmFsIHkgdXNhIGVsIGNcdTAwZjNkaWdvIGRlc2NyaXRvIGFudGVyaW9ybWVudGUgY29tbyBiYXNlLiJ9
+</div>
+<hr />
+<p>Es posible obtener una lista con los elementos de un diccionario utilizando el método .items().</p>
+<pre class="python"><code>diccionario = {&#39;animal&#39; : &#39;perro&#39;, &#39;edad&#39; : 5, &#39;juguetes&#39;: [&#39;pelota&#39;,&#39;peluche&#39;] }
+
+diccionario</code></pre>
+<pre><code>## {&#39;animal&#39;: &#39;perro&#39;, &#39;edad&#39;: 5, &#39;juguetes&#39;: [&#39;pelota&#39;, &#39;peluche&#39;]}</code></pre>
+<p><strong>05 - Recorre los elementos de un diccionario e imprimelos de la siguiente forma llave: valor</strong></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InB5dGhvbiIsInByZV9leGVyY2lzZV9jb2RlIjoicGVyc29uYSA9IHsnbm9tYnJlJyA6ICdqdWFuJywgJ2VkYWQnIDogMjUsICdwYXNhdGllbXBvcyc6IFsnY29jaW5hcicsJ2xlZXInXSB9Iiwic2FtcGxlIjoiI1VzYSB1biBjaWNsbyBmb3IgZSBpbXByaW1lIGxvcyBlbGVtZW50b3MgZGVsIGRpY2Npb25hcmlvIiwic29sdXRpb24iOiIjVXNhIHVuIGNpY2xvIGZvciBlIGltcHJpbWUgbG9zIGVsZW1lbnRvcyBkZWwgZGljY2lvbmFyaW9cbmZvciBsbGF2ZSwgdmFsb3IgaW4gcGVyc29uYS5pdGVtcygpOlxuICBwcmludChzdHIobGxhdmUpK1wiOiBcIitzdHIodmFsb3IpKSIsInNjdCI6InRlc3Rfb3V0cHV0X2NvbnRhaW5zKFwiZWRhZDogMjVcIiwgbm9fb3V0cHV0X21zZyA9IFwiVmVyaWZpY2EgcXVlIGhheWFzIGVzY3JpdG8gZWwgbWVuc2FqZSBjb3JyZWN0YW1lbnRlLCBjdWlkYSBsb3MgZXNwYWNpb3NcIilcbnN1Y2Nlc3NfbXNnKFwiQnVlbiB0cmFiYWpvIVwiKSIsImhpbnQiOiJSZWN1ZXJkYSB1c2FyIHVuYSBjaWNsbyBmb3IgcGFyYSByZWNvcnJlciBsb3MgZWxlbWVudG9zIHkgdXNhIGVsIGNcdTAwZjNkaWdvIGRlc2NyaXRvIGFudGVyaW9ybWVudGUgY29tbyBiYXNlLCByZWN1ZXJkYSBjb252ZXJ0aXIgbGEgbGxhdmUgeSBlbCB2YWxvciBhIHN0cmluZyBhbnRlcyBkZSBpbXByaW1pci4ifQ==
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

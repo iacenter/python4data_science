@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Exploración de los datos</title>
+
+<script src="pub/libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="pub/libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="pub/libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="pub/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="pub/libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="pub/libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="pub/libs/navigation-1.1/tabsets.js"></script>
+<link href="pub/libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="pub/libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Exploración de los datos</h1>
+
+</div>
+
+
+<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+<p>En los ejercicios anteriores aprendimos a inspeccionar el data set obteniendo una parte de los datos para ver su estructura. En algunas ocasiones, solo necesitamos obtener un subconjunto de los datos.</p>
+<p>Podemos seleccionar una sola columna usando corchetes <code>[]</code> y el nombre de la columna entre comillas como se muestra a continuación:</p>
+<pre class="python"><code>df[&#39;species&#39;] # Selecciona la columna &#39;species&#39; de nuestro data set.</code></pre>
+<p><strong>Prueba seleccionar una columna del data set llamado <code>df</code></strong></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InB5dGhvbiIsInByZV9leGVyY2lzZV9jb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2Nzdihcblx0J2h0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9td2Fza29tL3NlYWJvcm4tZGF0YS9tYXN0ZXIvaXJpcy5jc3YnXG4pIiwic2FtcGxlIjoiIyBBc2lnbmEgbGEgY29sdW1uYSBzZXBhbF9sZW5ndGggYSBsYSB2YXJpYWJsZSAnZGZfc2VwYWwnXG5cblxuIyBJbXByaW1lIGVsIGNvbnRlbmlkbyBkZSBsYSB2YXJpYWJsZSBkZl9zZXBhbCIsInNvbHV0aW9uIjoiIyBBc2lnbmEgbGEgY29sdW1uYSBzZXBhbF9sZW5ndGggYSBsYSB2YXJpYWJsZSAnZGZfc2VwYWwnXG5kZl9zZXBhbCA9IGRmWydzZXBhbF9sZW5ndGgnXVxuXG4jIEltcHJpbWUgZWwgY29udGVuaWRvIGRlIGxhIHZhcmlhYmxlIGRmX3NlcGFsXG5wcmludChkZl9zZXBhbCkiLCJzY3QiOiJ0ZXN0X29iamVjdChcImRmX3NlcGFsXCIpXG50ZXN0X291dHB1dF9jb250YWlucyhcblx0XCJOYW1lOiBzZXBhbF9sZW5ndGhcIixcblx0bm9fb3V0cHV0X21zZz1cIlJlY3VlcmRhIHVzYXIgcHJpbnQgcGFyYSBpbXByaW1pciBlbCB2YWxvciBkZSBsYSBkZl9zZXBhbC5cIlxuKVxuXG5zdWNjZXNzX21zZyhcIkJpZW4gaGVjaG8hXCIpIn0=
+</div>
+<hr />
+<p>Así como es posible seleccionar una columna de un data frame, también es posible seleccionar más de una según se necesite. Para seleccionar varias columnas, le pasamos un arreglo con los nombres de las columnas. Por ejemplo:</p>
+<pre class="python"><code>df[[&#39;sepal_length&#39;, &#39;sepal_width&#39;]] # Nótese los dobles corchetes [] para pasar un arreglo</code></pre>
+<p><strong>Prueba seleccionar varias columnas como se indica</strong></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InB5dGhvbiIsInByZV9leGVyY2lzZV9jb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2Nzdihcblx0J2h0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9td2Fza29tL3NlYWJvcm4tZGF0YS9tYXN0ZXIvaXJpcy5jc3YnXG4pIiwic2FtcGxlIjoiIyBEZWZpbmUgdW5hIHZhcmlhYmxlIGxsYW1hZGEgZGZfcGV0YWxfc3BlY2llcyBxdWUgY29udGVuZ2EgbGFzIGNvbHVtbmFzIFxuIyBwZXRhbF9sZW5ndGgsIHBldGFsX3dpZHRoIHkgc3BlY2llc1xuXG5cbiMgSW1wcmltZSBsYSB2YXJpYWJsZSBkZl9wZXRhbF9zcGVjaWVzIHBhcmEgdmVyIHN1IGNvbnRlbmlkby4iLCJzb2x1dGlvbiI6IiMgRGVmaW5lIHVuYSB2YXJpYWJsZSBsbGFtYWRhIGRmX3BldGFsX3NwZWNpZXMgcXVlIGNvbnRlbmdhIGxhcyBjb2x1bW5hcyBcbiMgcGV0YWxfbGVuZ3RoLCBwZXRhbF93aWR0aCB5IHNwZWNpZXNcbmRmX3BldGFsX3NwZWNpZXMgPSBkZltbJ3BldGFsX2xlbmd0aCcsICdwZXRhbF93aWR0aCcsICdzcGVjaWVzJ11dXG5cbiMgSW1wcmltZSBsYSB2YXJpYWJsZSBkZl9wZXRhbF9zcGVjaWVzIHBhcmEgdmVyIHN1IGNvbnRlbmlkby5cbnByaW50KGRmX3BldGFsX3NwZWNpZXMpIiwic2N0IjoidGVzdF9vYmplY3QoXCJkZl9wZXRhbF9zcGVjaWVzXCIpXG50ZXN0X291dHB1dF9jb250YWlucyhcblx0XCJwZXRhbF9sZW5ndGggIHBldGFsX3dpZHRoICAgIHNwZWNpZXNcIixcblx0bm9fb3V0cHV0X21zZz1cIlJlY3VlcmRhIHVzYXIgcHJpbnQgcGFyYSBpbXByaW1pciBlbCB2YWxvciBkZSB0dSB2YXJpYWJsZS5cIlxuKVxuXG5zdWNjZXNzX21zZyhcIk11eSBiaWVuIVwiKSJ9
+</div>
+<hr />
+<p>También es posible seleccionar rangos de filas si le pasamos un rango como el siguiente:</p>
+<pre class="python"><code>df[0:10] # Selecciona las filas desde 0 hasta 9</code></pre>
+<p><strong>Prueba a seleccionar el rango de filas que se indica en el ejercicio</strong></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InB5dGhvbiIsInByZV9leGVyY2lzZV9jb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2Nzdihcblx0J2h0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9td2Fza29tL3NlYWJvcm4tZGF0YS9tYXN0ZXIvaXJpcy5jc3YnXG4pIiwic2FtcGxlIjoiIyBDcmVhIHVuYSB2YXJpYWJsZSBkZl9yb3dzIHF1ZSBjb250ZW5nYSBsYXMgZmlsYXMgZGUgbGEgNTAgaGFzdGEgbGEgMTAwLlxuXG5cbiMgSW1wcmltZSBsYSB2YXJpYWJsZSBxdWUgY3JlYXN0ZSBwYXJhIHZlciBzdSBjb250ZW5pZG8uIiwic29sdXRpb24iOiIjIENyZWEgdW5hIHZhcmlhYmxlIGRmX3Jvd3MgcXVlIGNvbnRlbmdhIGxhcyBmaWxhcyBkZSBsIDUwIGhhc3RhIGxhIDEwMC5cbmRmX3Jvd3MgPSBkZls1MDoxMDBdXG5cbiMgSW1wcmltZSBsYSB2YXJpYWJsZSBxdWUgY3JlYXN0ZSBwYXJhIHZlciBzdSBjb250ZW5pZG8uXG5wcmludChkZl9yb3dzKSIsInNjdCI6InRlc3Rfb2JqZWN0KFwiZGZfcm93c1wiKVxudGVzdF9vdXRwdXRfY29udGFpbnMoXG5cdFwiMS40ICB2ZXJzaWNvbG9yXCIsXG5cdG5vX291dHB1dF9tc2c9XCJSZWN1ZXJkYSB1c2FyIHByaW50IHBhcmEgaW1wcmltaXIgZWwgdmFsb3IgZGUgdHUgdmFyaWFibGUuXCJcbilcblxuc3VjY2Vzc19tc2coXCJNdXkgYmllbiBoZWNobyFcIikifQ==
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

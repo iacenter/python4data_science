@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Exploración de los datos</title>
+
+<script src="pub/libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="pub/libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="pub/libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="pub/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="pub/libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="pub/libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="pub/libs/navigation-1.1/tabsets.js"></script>
+<link href="pub/libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="pub/libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Exploración de los datos</h1>
+
+</div>
+
+
+<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+<p>En el ejercicio anterior importamos el dataset iris, para poder trabajar con un conjunto de datos es importante entenderlo, por lo cual en este ejercicio aprenderás algunos métodos para explorar un Dataframe (Estructura que usa pandas para manipular un conjunto de datos).</p>
+<p>En los siguientes ejercicios la variable df ya contiene el dataset iris, no es necesario que vuelvas a cargarlo.</p>
+<hr />
+<p><strong>01 - Prueba usando el método .head() para mostrar los primeros renglones del Dataframe.</strong></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InB5dGhvbiIsInByZV9leGVyY2lzZV9jb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL213YXNrb20vc2VhYm9ybi1kYXRhL21hc3Rlci9pcmlzLmNzdicpIiwic2FtcGxlIjoiI1VzYSBlbCBtXHUwMGU5dG9kbyAuaGVhZCgpIHkgYXNpZ25hIGVsIHZhbG9yIGEgbGEgdmFyaWFibGUgcHJpbWVyb3NfcmVuZ2xvbmVzXG5cblxuI0ltcHJpbWUgbGEgdmFyaWFibGUgcHJpbWVyb3NfcmVuZ2xvbmVzIiwic29sdXRpb24iOiIjVXNhIGVsIG1cdTAwZTl0b2RvIC5oZWFkKCkgeSBhc2lnbmEgZWwgdmFsb3IgYSBsYSB2YXJpYWJsZSBwcmltZXJvc19yZW5nbG9uZXNcbnByaW1lcm9zX3Jlbmdsb25lcyA9IGRmLmhlYWQoKVxuXG4jSW1wcmltZSBsYSB2YXJpYWJsZSBwcmltZXJvc19yZW5nbG9uZXNcbnByaW50KHByaW1lcm9zX3Jlbmdsb25lcykiLCJzY3QiOiJ0ZXN0X29iamVjdChcInByaW1lcm9zX3Jlbmdsb25lc1wiKVxudGVzdF9vdXRwdXRfY29udGFpbnMoXCI0ICAgICAgICAgICA1LjBcIiwgbm9fb3V0cHV0X21zZyA9IFwiQXNlZ3VyYXRlIGRlIHVzYXIgcHJpbnQgcGFyYSBpbXJwaW1pciBlbCB2YWxvciBkZSBwcmltZXJvc19yZW5nbG9uZXMuXCIpXG5zdWNjZXNzX21zZyhcIkJ1ZW4gdHJhYmFqbyFcIikiLCJoaW50IjoiTG9zIG9iamV0b3MgZGUgdGlwbyBkYXRhZnJhbWUgdGllbmVuIGVsIG1cdTAwZTl0b2RvIGhlYWQsIG1hbmRhbG8gbGxhbWFyIGFzXHUwMGVkOiBkZi5oZWFkKCkifQ==
+</div>
+<hr />
+<p><strong>02 - Ahora usando el método .tail() para mostrar los últimos renglones del Dataframe.</strong></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InB5dGhvbiIsInByZV9leGVyY2lzZV9jb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL213YXNrb20vc2VhYm9ybi1kYXRhL21hc3Rlci9pcmlzLmNzdicpIiwic2FtcGxlIjoiI1VzYSBlbCBtXHUwMGU5dG9kbyAudGFpbCgpIHkgYXNpZ25hIGVsIHZhbG9yIGEgbGEgdmFyaWFibGUgdWx0aW1vc19yZW5nbG9uZXNcblxuXG4jSW1wcmltZSBsYSB2YXJpYWJsZSB1bHRpbW9zX3Jlbmdsb25lcyIsInNvbHV0aW9uIjoiI1VzYSBlbCBtXHUwMGU5dG9kbyAuaGVhZCgpIHkgYXNpZ25hIGVsIHZhbG9yIGEgbGEgdmFyaWFibGUgdWx0aW1vc19yZW5nbG9uZXNcbnVsdGltb3NfcmVuZ2xvbmVzID0gZGYudGFpbCgpXG5cbiNJbXByaW1lIGxhIHZhcmlhYmxlIHVsdGltb3NfcmVuZ2xvbmVzXG5wcmludCh1bHRpbW9zX3Jlbmdsb25lcykiLCJzY3QiOiJ0ZXN0X29iamVjdChcInVsdGltb3NfcmVuZ2xvbmVzXCIpXG50ZXN0X291dHB1dF9jb250YWlucyhcIjE0OSAgICAgICAgICAgNS45XCIsIG5vX291dHB1dF9tc2cgPSBcIkFzZWd1cmF0ZSBkZSB1c2FyIHByaW50IHBhcmEgaW1ycGltaXIgZWwgdmFsb3IgZGUgdWx0aW1vc19yZW5nbG9uZXNcIilcbnN1Y2Nlc3NfbXNnKFwiQnVlbiB0cmFiYWpvIVwiKSIsImhpbnQiOiJMb3Mgb2JqZXRvcyBkZSB0aXBvIGRhdGFmcmFtZSB0aWVuZW4gZWwgbVx1MDBlOXRvZG8gdGFpbCwgbWFuZGFsbyBsbGFtYXIgYXNcdTAwZWQ6IGRmLnRhaWwoKSJ9
+</div>
+<hr />
+<p>Ahora que has observado una porción de tus datos vamos a usar otros métodos para aprender acerca de las columnas presentes en el Dataframe.</p>
+<p><strong>03 - Usa el método .info() para mostrar el tipo de dato que contiene cada columna.</strong></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InB5dGhvbiIsInByZV9leGVyY2lzZV9jb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL213YXNrb20vc2VhYm9ybi1kYXRhL21hc3Rlci9pcmlzLmNzdicpIiwic2FtcGxlIjoiI1VzYSBlbCBtXHUwMGU5dG9kbyAuaW5mbygpIHkgYXNpZ25hIGVsIHZhbG9yIGEgbGEgdmFyaWFibGUgaW5mb1xuXG5cbiNJbXByaW1lIGxhIHZhcmlhYmxlIGluZm8iLCJzb2x1dGlvbiI6IiNVc2EgZWwgbVx1MDBlOXRvZG8gLmluZm8oKSB5IGFzaWduYSBlbCB2YWxvciBhIGxhIHZhcmlhYmxlIGluZm9cbmluZm8gPSBkZi5pbmZvKClcblxuI0ltcHJpbWUgbGEgdmFyaWFibGUgaW5mb1xucHJpbnQoaW5mbykiLCJzY3QiOiJ0ZXN0X29iamVjdChcImluZm9cIilcbnRlc3Rfb3V0cHV0X2NvbnRhaW5zKFwiUmFuZ2VJbmRleDogMTUwXCIsIG5vX291dHB1dF9tc2cgPSBcIkFzZWd1cmF0ZSBkZSB1c2FyIHByaW50IHBhcmEgaW1ycGltaXIgZWwgdmFsb3IgZGUgaW5mb1wiKVxuc3VjY2Vzc19tc2coXCJCdWVuIHRyYWJham8hXCIpIiwiaGludCI6IkxvcyBvYmpldG9zIGRlIHRpcG8gZGF0YWZyYW1lIHRpZW5lbiBlbCBtXHUwMGU5dG9kbyBpbmZvLCBtYW5kYWxvIGxsYW1hciBhc1x1MDBlZDogZGYuaW5mbygpIn0=
+</div>
+<p>Puedes observar tipos de datos como int64, float64 y object, para los tipos de datos númericos pandas usa numpy, para variables categóricas pandas usa su propia implementación.</p>
+<hr />
+<p>Para finalizar este ejercicio usarás el método .describe() para mostrar información estadística sumarizada acerca de las columnas númericas.</p>
+<p><strong>04 - Usa el método .describe()</strong></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InB5dGhvbiIsInByZV9leGVyY2lzZV9jb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuZGYgPSBwZC5yZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL213YXNrb20vc2VhYm9ybi1kYXRhL21hc3Rlci9pcmlzLmNzdicpIiwic2FtcGxlIjoiI1VzYSBlbCBtXHUwMGU5dG9kbyAuZGVzY3JpYmUoKSB5IGFzaWduYSBlbCB2YWxvciBhIGxhIHZhcmlhYmxlIGluZm9fY29sdW1uYXNcblxuXG4jSW1wcmltZSBsYSB2YXJpYWJsZSBpbmZvX2NvbHVtbmFzIiwic29sdXRpb24iOiIjVXNhIGVsIG1cdTAwZTl0b2RvIC5kZXNjcmliZSgpIHkgYXNpZ25hIGVsIHZhbG9yIGEgbGEgdmFyaWFibGUgaW5mb19jb2x1bW5hc1xuaW5mb19jb2x1bW5hcyA9IGRmLmRlc2NyaWJlKClcblxuI0ltcHJpbWUgbGEgdmFyaWFibGUgaW5mb19jb2x1bW5hc1xucHJpbnQoaW5mb19jb2x1bW5hcykiLCJzY3QiOiJ0ZXN0X29iamVjdChcImluZm9fY29sdW1uYXNcIilcbnRlc3Rfb3V0cHV0X2NvbnRhaW5zKFwic3RkXCIsIG5vX291dHB1dF9tc2cgPSBcIkFzZWd1cmF0ZSBkZSB1c2FyIHByaW50IHBhcmEgaW1ycGltaXIgZWwgdmFsb3IgZGUgaW5mb19jb2x1bW5hc1wiKVxuc3VjY2Vzc19tc2coXCJCdWVuIHRyYWJham8hXCIpIiwiaGludCI6IkxvcyBvYmpldG9zIGRlIHRpcG8gZGF0YWZyYW1lIHRpZW5lbiBlbCBtXHUwMGU5dG9kbyBkZXNjcmliZSwgbWFuZGFsbyBsbGFtYXIgYXNcdTAwZWQ6IGRmLmRlc2NyaWJlKCkifQ==
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
